@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #141922;
+}
+
+.debug {
+    background-color: rgba(255, 0, 0, .1);
+}
+
+/* mix */
+.container {
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    height: calc(100% - 100px);
+}
+/* /mix */
+
+/* aside */
+aside {
+    width: 200px;
+    background-color: #000;
+}
+/* /aside */
+
+/* main */
+main {
+    width: calc(100% - 200px);
+}
+/* /main */
+
+/* footer */
+footer {
+    height: 100px;
+    background-color: #282828;
+}
+/* /footer */
