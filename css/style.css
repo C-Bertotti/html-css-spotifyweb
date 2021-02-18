@@ -56,6 +56,41 @@ aside {
 main {
     width: calc(100% - 200px);
 }
+
+#main__top {
+    height: 90px;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 999;
+    left: 230px;
+    top: 0;
+    right: 0;
+}
+
+.main__nav--wrapper {
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.main__nav ul li {
+    display: inline-block;
+}
+
+section {
+    padding: 40px;
+}
+
+/* album */
+.album__wrapper {
+    display: flex;
+}
+.album img {
+    height: 200px;
+    width: 200px;
+}
+
+/* /album */
 /* /main */
 
 /* footer */
