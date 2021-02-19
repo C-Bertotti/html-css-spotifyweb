@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #fff;
 }
 
 body {
@@ -10,7 +11,7 @@ body {
 }
 
 .debug {
-    background-color: rgba(255, 0, 0, .1);
+    background-color: rgba(255, 0, 0, .3);
 }
 
 /* mix */
@@ -33,9 +34,10 @@ h1 {
 a {
     text-decoration: none;
 }
+ul {
+    list-style: none;
+}
 /* /typo */
-
-
 
 /* aside */
 aside {
@@ -43,52 +45,128 @@ aside {
     flex-basis: 50px;
     flex-shrink: 0;
     flex-direction: column;
-    background-color: red;
-    padding: 10px 5px 5px;
-    color: #fff;
+    background-color: #000;
+}
+
+aside a {
+    font-weight: 600;
+    opacity: .8;
+}
+aside a:hover,
+aside a:active {
+    opacity: 1;
 }
 
 /* header */
+/* logo */
 .logo {
     display: flex;
     flex-direction: row;
     align-items: center;
-    color: #fff;
+    padding-top: 5px;
+    opacity: 1;
 }
 .logo i {
-    font-size: 40px;
+    font-size: 35px;
 }
 .logo span {
     vertical-align: super;
     font-size: 10px;
     padding-left: 3px;
 }
-/* /header */
+/* /logo */
+/* main__nav */
+.main__nav {
+    margin: 30px auto;
+}
 
-/* playlist */
+.main__nav li {
+    position: relative;
+}
+.main__nav li::before {
+    content: "";
+    position: absolute;
+    background-color:#adff2f;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 3px;
+}
 
-/* /playlist */
+.main__nav a {
+    display: inline-block;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 15px;
+
+}
+
+.main__nav a img {
+    width: 30px;
+    opacity: .8;
+}
+/* /main__nav */
+
+
+/* ---- responsive ---- */
 @media screen and (max-width:575px) {
-    header *:not(i),
+    header a *:not(i, img),
     #aside__bottom *:not(i) {
         display: none;
     }
-    
+    /* logo */
     .logo {
         justify-content: center;
     }
+    /* /logo */
+
+    /* main__nav */
+    .main__nav a {
+        text-align: center;
+    }
+    /* /main__nav */
+
 }
 
 @media screen and (min-width:576px) {
     aside {
         flex-basis: 230px;
+    }
+    /* logo */
+    .logo {
         padding: 20px 20px 0;
     }
 
     .logo i {
         padding-right: 10px;
     }
+    /* /logo */
+
+    /* main__nav */
+    .main__nav a {
+        display: flex;
+        padding-left: 20px;
+        align-items: center;
+    }
+    .main__nav a img {
+        margin-right: 5px;
+    }
+    /* /main__nav */
+
 }
+/* / ---- responsive ---- */
+/* /header */
+
+/* aside__bottom */
+
+
+
+
+
+
+
+/* /aside__bottom */
+
 /* /aside */
 
 /* main */
@@ -104,7 +182,7 @@ main {
     top: 0;
     right: 0;
 }
-
+/* 
 .main__nav--wrapper {
     height: 130px;
     display: flex;
@@ -113,7 +191,7 @@ main {
 }
 .main__nav ul li {
     display: inline-block;
-}
+} */
 
 section {
     padding: 40px;
