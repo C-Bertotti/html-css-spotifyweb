@@ -50,7 +50,7 @@ aside {
 
 aside a {
     font-weight: 600;
-    opacity: .8;
+    opacity: .6;
 }
 aside a:hover,
 aside a:active {
@@ -75,6 +75,7 @@ aside a:active {
     padding-left: 3px;
 }
 /* /logo */
+
 /* main__nav */
 .main__nav {
     margin: 30px auto;
@@ -91,6 +92,10 @@ aside a:active {
     bottom: 0;
     left: 0;
     width: 3px;
+    display: none;
+}
+.main__nav a:hover .main__nav li::before {
+    display: block;
 }
 
 .main__nav a {
@@ -98,7 +103,6 @@ aside a:active {
     width: 100%;
     padding: 5px 0;
     font-size: 15px;
-
 }
 
 .main__nav a img {
