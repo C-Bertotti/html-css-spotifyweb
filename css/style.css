@@ -53,7 +53,7 @@ aside a {
     opacity: .6;
 }
 aside a:hover,
-aside a:active {
+aside a.active {
     opacity: 1;
 }
 
@@ -72,7 +72,7 @@ aside a:active {
 .logo span {
     vertical-align: super;
     font-size: 10px;
-    padding-left: 3px;
+    margin-left: 3px;
 }
 /* /logo */
 
@@ -84,25 +84,17 @@ aside a:active {
 .main__nav li {
     position: relative;
 }
-.main__nav li::before {
-    content: "";
-    position: absolute;
-    background-color:#adff2f;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 3px;
-    display: none;
-}
-.main__nav a:hover .main__nav li::before {
-    display: block;
-}
-
+ 
 .main__nav a {
-    display: inline-block;
-    width: 100%;
+    display: flex;
+    flex-basis: 100%;
     padding: 5px 0;
     font-size: 15px;
+    border-left: 3px solid #000;
+}
+.main__nav a:hover,
+.main__nav a.active {
+    border-left: 3px solid #adff2f;
 }
 
 .main__nav a img {
@@ -119,17 +111,11 @@ aside a:active {
         display: none;
     }
     /* logo */
-    .logo {
+    .logo,
+    .main__nav a {
         justify-content: center;
     }
     /* /logo */
-
-    /* main__nav */
-    .main__nav a {
-        text-align: center;
-    }
-    /* /main__nav */
-
 }
 
 @media screen and (min-width:576px) {
@@ -142,7 +128,7 @@ aside a:active {
     }
 
     .logo i {
-        padding-right: 10px;
+        margin-right: 10px;
     }
     /* /logo */
 
@@ -156,7 +142,6 @@ aside a:active {
         margin-right: 5px;
     }
     /* /main__nav */
-
 }
 /* / ---- responsive ---- */
 /* /header */
