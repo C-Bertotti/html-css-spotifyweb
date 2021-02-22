@@ -62,13 +62,19 @@ ul {
 h1 {
     font-size: 25px;
 }
-a {
-    text-decoration: none;
+h2 {
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 26px;
 }
 h3 {
     text-transform: uppercase;
     font-size: 13px;
 }
+a {
+    text-decoration: none;
+}
+
 
 /* /typo */
 
@@ -307,7 +313,7 @@ main {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 0 30px;
+    padding: 0 15px;
 }
 
 #upgrade--btn { 
@@ -334,6 +340,10 @@ main {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+}
+.categories__nav--wrapper,
+section {
+    padding: 0 30px;
 }
 .categories__nav ul {
     margin-top: 90px;
@@ -368,6 +378,24 @@ main {
     background-color: #adff2f;
 }
 /* /categories__nav */
+
+/* sections */
+section {
+    margin-top: 40px;
+}
+
+.album__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.album {
+    background-color: red;
+    border: 1px solid #fff;
+    flex-basis: calc((100% / 6) - 10px);
+}
+/* /sections */
+
+
 
 
 
