@@ -35,6 +35,7 @@ ul {
     background-color: transparent;
     padding: 0;
     align-items: center;
+    cursor: pointer;
 }
 
 .aside__btn {
@@ -68,6 +69,7 @@ aside {
     flex-basis: 50px;
     flex-shrink: 0;
     background-color: #000;
+    overflow: hidden;
 }
 
 aside a {
@@ -128,7 +130,8 @@ aside a.active,
 /* ---- responsive ---- */
 @media screen and (max-width:575px) {
     header a *:not(i, img),
-    #aside__bottom *:not(i) {
+    .aside__bottom a *:not(i),
+    .aside__bottom .btn *:not(img) {
         display: none;
     }
     /* logo */
@@ -148,7 +151,7 @@ aside a.active,
     }
     /* logo */
     .logo {
-        padding: 20px 20px 0;
+        margin: 20px 20px 0;
     }
 
     .logo i {
@@ -158,8 +161,7 @@ aside a.active,
 
     /* main__nav */
     .main__nav a {
-        display: flex;
-        padding-left: 20px;
+        padding-left: 17px;
         align-items: center;
     }
     .main__nav a img {
@@ -170,13 +172,13 @@ aside a.active,
 /* / ---- responsive ---- */
 /* /header */
 
-/* aside__bottom */
+/* aside__middle */
 #aside__middle {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     padding: 0 20px;
-    background-color: green;
+    overflow: hidden;
 }
 
 #playlist__btn span {
@@ -194,36 +196,34 @@ aside a.active,
     margin-right: 10px;
 }
 
-#playlist__mine {
-    /* overflow: auto; */
-    background-color: blue;
-    flex-grow: 1;
+#playlist__list {
+    overflow-y: auto;
 }
+
 #playlist__list li {
-    margin-top: 15px;
-   
+    margin-top: 15px;  
 }
 #playlist__list li a {
     display: block;
-    height: 20px;
     width: 100%;
-    line-height: 20px;
-    vertical-align: middle;
 }
 
+/* ---- responsive ---- */
+@media screen and (max-width:575px) {
+   #aside__middle {
+       display: none;
+   }
+}
+/* / ---- responsive ---- */
+/* /aside__middle */
+
+/* aside__bottom */
 .aside__bottom {
+    padding: 8px 20px 0;
     display: flex;
     flex-direction: column;
-    position: relative;
 }
 
-.aside__bottom::after {
-    content: "";
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-}
 .aside__bottom a i {
     font-size: 8px;
     display: inline-block;
@@ -242,7 +242,8 @@ aside a.active,
     font-weight: 600;
     color: #fff;
     font-size: 16px;
-    padding: 5px 0;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 #profile__img {
@@ -250,24 +251,35 @@ aside a.active,
     width: 25px;
     background-color: grey;
     border-radius: 50%;
-    margin-right: 5px;
-
+    margin-right: 10px;
 }
 
 /* ---- responsive ---- */
 @media screen and (max-width:575px) {
-   
-}
+   .aside__bottom {
+       flex-grow: 1;
+       justify-content: flex-end;
+       padding: 0;
+       align-content: center;
+    }
+    
+    
+    .aside__bottom a {
+        margin: 0 auto;
+    }
+    .aside__bottom a i {
+        margin-right: 0;
+    }
 
-@media screen and (min-width:576px) {
-   
+    .profile__btn {
+        justify-content: center;
+        border-top: none;
+    }
+    #profile__img {
+        margin-right: 0;
+    }
 }
 /* / ---- responsive ---- */
-
-
-
-
-
 /* /aside__bottom */
 
 /* /aside */
