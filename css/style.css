@@ -405,6 +405,10 @@ section .album {
     background-color: black;
     position: relative;
 }
+.album__cover--circle {
+    border-radius: 50%;
+    overflow: hidden;
+}
 .album__cover img {
     width: 100%;
     transition: opacity 0.2s;
