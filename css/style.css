@@ -497,9 +497,25 @@ footer > * {
     align-items: center;
 }
 
+/* ---- responsive ---- */
+@media screen and (max-width:767px) {
+    footer {
+        height: 120px;
+    }
+    .footer__center {
+        order: -1;
+        flex-basis: 100%;
+    }
+    .footer__left,
+    .foooter__right {
+        flex-basis: 50%;
+    }
+}
+/* / ---- responsive ---- */
+
+/* footer__left */
 .footer__left {
     display: flex;
-    background-color: red;
 }
 
 .footer__album__cover {
@@ -526,49 +542,78 @@ footer > * {
     font-size: 15px;
 }
 
-.footer__right {
-    display: flex;
-    flex-grow: 1;
-    justify-content: flex-end;
-}
-
-
 /* ---- responsive ---- */
-@media screen and (max-width:767px) {
-    footer {
-        height: 120px;
-    }
-    .footer__center {
-        order: -1;
-        flex-basis: 100%;
-    }
-    .footer__left,
-    .foooter__right {
-        flex-basis: 50%;
-    }
-}
-
 @media screen and (min-width:768px) {
     .footer__btns__wrapper--left {
         display: flex;
         margin-left: 20px;
     }
     .footer__album__btn {
-        margin: 0 4px;
+        margin: 0 6px;
     }
 }
-
 /* / ---- responsive ---- */
+/* /footer__left */
 
-
-
-
-
-
+/* footer__center */
 .footer__center {
     background-color: blue;
 }
+/* /footer__center */
+
+/* footer__right */
 .footer__right {
-    background-color: green;
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
 }
+
+.footer__right__btn {
+    margin: 0 6px;
+}
+
+.footer__right p {
+    opacity: 1;
+    display: flex;
+    align-items: center;
+}
+.footer__right p span {
+    width: 100px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-left: 5px;
+    border-radius: 10px;
+    position: relative;
+}
+.footer__right p span::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.footer__right p:hover span::after {
+    background-color: #adff2f;
+}
+
+.footer__right p span::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 500;
+    display: none;
+}
+.footer__right p:hover span::before {
+    display: block;
+}
+/* /footer__right */
 /* /footer */
