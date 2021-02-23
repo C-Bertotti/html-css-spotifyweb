@@ -63,7 +63,6 @@ h1 {
     font-size: 25px;
 }
 h2 {
-    margin-bottom: 30px;
     font-weight: 700;
     font-size: 26px;
 }
@@ -386,6 +385,7 @@ section {
 
 /* sections */
 section h2,
+section h5,
 section .album {
     padding: 0 10px;
 }
@@ -397,6 +397,7 @@ section .album {
     flex-basis: calc(100% / 2);
     flex-wrap: wrap;
     text-align: center;
+    margin: 30px 0;
 }
 
 .album__cover {
@@ -408,18 +409,25 @@ section .album {
     transition: opacity 0.2s;
 }
 .album:hover img {
-    opacity: 0.3;
+    opacity: 0.4;
 }
-
-.album__cover p {
+.album:hover {
+    cursor: pointer;
+}
+.album p, 
+h5 {
+ font-size: 12px;
+ opacity: .6;
+}
+p.album__play {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 40px;
-    color: #fff;
     display: none;
     z-index: 100;
+    opacity: 1;
 }
 .album:hover .album__cover p {
     display: block;
@@ -432,11 +440,8 @@ section .album {
     overflow: hidden;
 }
 
-.album p.album__sub {
- font-size: 12px;
- opacity: .6;
- margin-bottom: 40px;
-}
+
+
 
 
 /* ---- responsive ---- */
